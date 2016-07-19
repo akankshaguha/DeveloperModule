@@ -1,3 +1,5 @@
+#!groovy
+
 node('CLONE_DEVELOPER_PROJECT') {
  git 'https://github.com/exorcist007/DeveloperModule.git'
 }
