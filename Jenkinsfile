@@ -17,5 +17,5 @@ node {
    	}
 stage 'ATRIFACT_DEVELOPER_MODULE'
 node {
-   	bat 'gradle test --info'
+   	bat 'gradle jar --info'
    	}
