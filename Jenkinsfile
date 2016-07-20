@@ -26,5 +26,5 @@ node{
 }
 stage 'START_BUILDING_MODERATOR_MODULE'
 node{
-//build 'ModeratorModule'
+build 'ModeratorModule'
 }
