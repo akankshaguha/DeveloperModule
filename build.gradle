@@ -2,9 +2,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-jar {
-   destinationDir project.file("../repo")
-}
+
 repositories {
     jcenter()
      maven {url = 'http://conjars.org/repo/'}
