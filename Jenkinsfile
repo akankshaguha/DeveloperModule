@@ -20,3 +20,7 @@ node {
    	bat 'gradle jar --info'
    	}
 
+stage 'START_BUILDING_MODERATOR_MODULE'
+node{
+build 'ModeratorModule'
+}
