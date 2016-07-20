@@ -19,8 +19,9 @@ stage 'ATRIFACT_DEVELOPER_MODULE'
 node {
    	bat 'gradle jar --info'
    	}
+ stage 'ARCHIVE_ARTIFACTS'
 node{
-  step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
+  step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 }
 stage 'START_BUILDING_MODERATOR_MODULE'
 node{
