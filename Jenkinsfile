@@ -19,7 +19,9 @@ stage 'ATRIFACT_DEVELOPER_MODULE'
 node {
    	bat 'gradle jar --info'
    	}
-
+node{
+ archive '*.jar'
+}
 stage 'START_BUILDING_MODERATOR_MODULE'
 node{
 build 'ModeratorModule'
