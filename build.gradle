@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 jar {
-   destinationDir project.file('../ModeratorModule/jarRepo')
+   destinationDir project.file('${JENKINS_HOME}/jobs/ModeratorModule/jarRepo')
 }
 repositories {
     jcenter()
