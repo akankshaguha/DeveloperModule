@@ -1,6 +1,6 @@
 #!groovy
 
-node('CLONE_MODERATOR_PROJECT') {
+node{
  git 'https://github.com/exorcist007/DeveloperModule.git'
 }
 stage 'CLEAN_DEVELOPER_MODULE'
