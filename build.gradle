@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 jar {
-   destinationDir project.file("${rootProject.projectDir}/repo")
+   destinationDir project.file("../repo")
 }
 repositories {
     jcenter()
