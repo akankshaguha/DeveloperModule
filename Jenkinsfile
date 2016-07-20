@@ -20,7 +20,7 @@ node {
    	bat 'gradle jar --info'
    	}
    	node{
- if(fileExists 'DeveloperProject.jar'){
+ if(fileExists '/DeveloperProject.jar'==true){
   echo 'good'
  }else echo 'bad'
 //step([$class: 'CopyArtifact', filter: '**/DeveloperProject.jar', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false]])
