@@ -20,7 +20,7 @@ node {
    	bat 'gradle jar --info'
    	}
    
- stage 'ARCHIVE_ARTIFACTS'
+stage 'ARCHIVE_ARTIFACTS'
 node{
   step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 }
