@@ -16,3 +16,4 @@ public class InnerJoin1 extends SubAssembly {
          setTails(join);
      }
 }
+//only this subassembly to be tested within this file
