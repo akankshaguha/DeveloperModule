@@ -30,7 +30,7 @@ node {
    
 stage 'ARCHIVE_ARTIFACTS'
 node{
-  //step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
+  step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 }
 
 
