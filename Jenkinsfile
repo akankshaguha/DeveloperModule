@@ -1,4 +1,8 @@
 #!groovy
+
+node{
+   git 'https://github.com/exorcist007/DeveloperModule.git'
+}
 stage 'CLEAN_DEVELOPER_MODULE'
 node {
    	sh 'chmod +x gradlew'
