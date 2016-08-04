@@ -34,13 +34,7 @@ stage 'ARCHIVE_ARTIFACTS'
 node{
   step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 }
-stage 'CHECKOUT_MODERATOR_SCM'
-node{
-  // second repository
-    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ModeratorModule']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/exorcist007/ModeratorModule.git']]])
-    // run first script
-    load 'ModeratorModule/Jenkinsfile'
-}
+
 
 
 
