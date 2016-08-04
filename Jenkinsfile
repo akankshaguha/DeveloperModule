@@ -1,19 +1,10 @@
 #!groovy
 
 
-stage 'CHECKOUT_DEVELOPER_SCM'
-node {
-    // first repository
-    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'DeveloperModule']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/exorcist007/DeveloperModule.git']]])
-   //
-   
-    // run second script
-}
 
-stage 'load_DEVELOPER_MODULE'
-node{
-     //  load 'DeveloperModule/Jenkinsfile'
-}
+
+
+
 stage 'CLEAN_DEVELOPER_MODULE'
 node {
    	sh 'chmod +x gradlew'
