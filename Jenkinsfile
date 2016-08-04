@@ -1,10 +1,4 @@
 #!groovy
-
-
-
-
-
-
 stage 'CLEAN_DEVELOPER_MODULE'
 node {
    	sh 'chmod +x gradlew'
