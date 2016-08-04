@@ -12,7 +12,7 @@ node {
 
 stage 'load_DEVELOPER_MODULE'
 node{
-       load 'DeveloperModule/Jenkinsfile'
+     //  load 'DeveloperModule/Jenkinsfile'
 }
 stage 'CLEAN_DEVELOPER_MODULE'
 node {
