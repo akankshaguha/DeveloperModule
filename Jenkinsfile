@@ -1,7 +1,12 @@
 #!groovy
 
-node{
- git 'https://github.com/exorcist007/DeveloperModule.git'
+node {
+    // first repository
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'DeveloperModule']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/exorcist007/DeveloperModule.git']]])
+   
+    load 'DeveloperModule/Jenkinsfile'
+    // run second script
+    
 }
 stage 'CLEAN_DEVELOPER_MODULE'
 node {
@@ -29,4 +34,13 @@ stage 'ARCHIVE_ARTIFACTS'
 node{
   step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 }
+
+node{
+  // second repository
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'ModeratorModule']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/exorcist007/ModeratorModule.git']]])
+    // run first script
+    load 'ModeratorModule/Jenkinsfile'
+}
+
+
 
