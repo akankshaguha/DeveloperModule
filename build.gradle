@@ -9,11 +9,9 @@ repositories {
 }
 
 
-sonar {
+sonarqube {
     properties {
         property "sonar.host.url", "http://10.130.241.86:9000/"
-        property "sonar.projectName", "Java :: AssignmentProject::PostfixExpression"
-        property "sonar.projectKey", "java:TempleteProject"
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
         property "sonar.jdbc.username", "admin"
         property "sonar.jdbc.password", "admin"
