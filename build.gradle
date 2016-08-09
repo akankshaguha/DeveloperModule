@@ -16,6 +16,15 @@ sonarqube {
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
     }
 }
+sonar {
+    server {
+        url = "http://10.130.241.86:9000/"
+    }
+    database {
+        username = "admin"
+        password = "admin"
+    }
+}
 buildscript {
     repositories {
         maven {
