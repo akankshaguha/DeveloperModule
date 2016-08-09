@@ -24,7 +24,7 @@ node {
   stage 'ANALYZE_CODE' 	
   node {
    	sh 'chmod +x gradlew'
-  sh './gradlew sonar --info'
+  sh './gradlew sonarqube --info'
    	}
    	
 stage 'ATRIFACT_DEVELOPER_MODULE'
