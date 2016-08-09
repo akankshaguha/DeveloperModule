@@ -1,7 +1,7 @@
 #!groovy
 
 node{
-   git 'https://github.com/exorcist007/DeveloperModule.git'
+   git 'https://github.com/akankshaguha/DeveloperModule.git'
 }
 stage 'CLEAN_DEVELOPER_MODULE'
 node {
