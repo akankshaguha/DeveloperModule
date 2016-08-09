@@ -2,14 +2,14 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-
+apply plugin: "org.sonarqube"
 repositories {
     jcenter()
      maven {url = 'http://conjars.org/repo/'}
 }
 
 
-sonarqube {
+sonar {
     properties {
         property "sonar.host.url", "http://10.130.241.86:9000/"
         property "sonar.projectName", "Java :: AssignmentProject::PostfixExpression"
@@ -30,7 +30,7 @@ buildscript {
   }
 }
 
-apply plugin: "org.sonarqube"
+
 dependencies {
    
     testCompile 'junit:junit:4.12'
