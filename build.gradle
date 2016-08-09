@@ -2,7 +2,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'org.sonarqube'
+
 repositories {
     jcenter()
      maven {url = 'http://conjars.org/repo/'}
@@ -11,34 +11,26 @@ repositories {
 
 sonarqube {
     properties {
+        property "sonar.host.url", "http://10.130.241.86:9000/"
         property "sonar.projectName", "Java :: AssignmentProject::PostfixExpression"
         property "sonar.projectKey", "java:TempleteProject"
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+        property "sonar.jdbc.username", "admin"
+        property "sonar.jdbc.password", "admin"
     }
 }
 buildscript {
-server {
-        url = "http://10.130.241.86:9000/"
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
     }
-    database {
-        username = "admin"
-        password = "admin"
-    }
-    repositories {
-        maven {
-            url "http://repo1.maven.org/maven2/"
-        }
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-        mavenLocal()
-    }
-    dependencies {
-        classpath 'org.ajoberstar:gradle-jacoco:0.1.0'
-        classpath 'org.sonarqube.gradle:gradle-sonarqube-plugin:1.0'
-    }
+  }
+  dependencies {
+    classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.0.1"
+  }
 }
 
+apply plugin: "org.sonarqube"
 dependencies {
    
     testCompile 'junit:junit:4.12'
